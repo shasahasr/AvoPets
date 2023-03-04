@@ -12,3 +12,9 @@ def get_user_by_email(email):
         if email == user.get("email"):
             return user
     return None
+
+def check_login(email, password):
+    for user in users_ref.get():
+        if email == user.get("email") and password == user.get("password"):
+            return user.id
+    return False
