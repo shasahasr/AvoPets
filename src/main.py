@@ -1,31 +1,24 @@
 import flet as ft
+from views.home import home
+from views.login import login
 
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    def route_change(route):
+        page.views.clear()
+        page.views.append(home(page))
+        if page.route == "/login":
+            page.views.append(login(page))
+    
+    def view_pop(view):
+        page.views.pop()
+        top_view = page.views[-1]
+        page.go(top_view.route)
 
-    txt_number = ft.TextField(
-        value="0", text_align=ft.TextAlign.RIGHT, width=100)
-
-    def minus_click(e):
-        txt_number.value = str(int(txt_number.value) - 1)
-        page.update()
-
-    def plus_click(e):
-        txt_number.value = str(int(txt_number.value) + 1)
-        page.update()
-
-    page.add(
-        ft.Row(
-            [
-                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
-                txt_number,
-                ft.IconButton(ft.icons.ADD, on_click=plus_click),
-            ],
-            alignment=ft.MainAxisAlignment.CENTER,
-        )
-    )
+    page.on_route_change = route_change
+    page.on_view_pop = view_pop
+    page.go(page.route)
 
 
 ft.app(target=main, view=ft.WEB_BROWSER)
