@@ -55,6 +55,5 @@ def login(page: ft.Page):
                 padding=50,
                 on_click= verifylogin
             ),
-            ft.Text("HELLOOOO"),
         ]
     )
