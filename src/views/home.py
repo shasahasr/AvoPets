@@ -5,6 +5,7 @@ def home(page: ft.Page):
         "/",
         [
             ft.ElevatedButton('Login', on_click= lambda _: page.go('/login')),
+            ft.ElevatedButton('Create an Account', on_click= lambda _: page.go('/create_account')),
             ft.Row([
                 ft.Column([
                     ft.Text("Stats", size=20),
