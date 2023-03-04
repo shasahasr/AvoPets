@@ -24,5 +24,5 @@ def register(email, password):
             if email == user.get('email'):
                 return False
     
-    new_user = users_ref.add({"email": email, "password": password, "pet": {"endurance": 100, "health": 100, "name": "pet name", "strength": 100}, "stats": {"mindfulness": 0, "running": 0, "weights": 0}})
+    new_user = users_ref.add({"email": email, "password": password, "pet": {"endurance": 100, "health": 100, "name": "pet name", "strength": 100, "neededxp": 100, "currentxp": 0, "currentlevel": 1}, "stats": {"mindfulness": 0, "running": 0, "weights": 0}})
     return new_user[1].id

@@ -5,9 +5,9 @@ from views.create_account import create_account
 from views.train import train
 from views.workout.weight.push import push
 
-
 def main(page: ft.Page):
     page.title = "Flet counter example"
+    page.client_storage.clear()
 
     def route_change(route):
         page.views.clear()
