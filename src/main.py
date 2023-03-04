@@ -1,7 +1,7 @@
 import flet as ft
 from views.home import home
 from views.login import login
-
+from views.create_account import create_account
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
@@ -10,6 +10,8 @@ def main(page: ft.Page):
         page.views.append(home(page))
         if page.route == "/login":
             page.views.append(login(page))
+        if page.route == "/create_account":
+            page.views.append(create_account(page))
     
     def view_pop(view):
         page.views.pop()
