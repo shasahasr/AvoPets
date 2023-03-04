@@ -15,6 +15,8 @@ def home(page: ft.Page):
                         ft.Text("Endurance: "),
                     ]),
                     ft.Text("Avocado Goes Here", size=50),
+                    ft.ElevatedButton('Train',
+                                      on_click=lambda _: page.go('/train')),
                 ])
             ]
         )
@@ -28,8 +30,6 @@ def home(page: ft.Page):
                         'Login', on_click=lambda _: page.go('/login')),
                     ft.ElevatedButton(
                         'Create an Account', on_click=lambda _: page.go('/create_account')),
-                    ft.ElevatedButton('Train',
-                                      on_click=lambda _: page.go('/train')),
                 ])
             ]
         )
