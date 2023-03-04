@@ -16,10 +16,7 @@ auth = firebase.auth()
 
 #Login function
 
-def login():
-    print("Log in...")
-    email=input("Enter email: ")
-    password=input("Enter password: ")
+def login(email, password):
     try:
         login = auth.sign_in_with_email_and_password(email, password)
         print("Successfully logged in!")
