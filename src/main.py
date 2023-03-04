@@ -1,6 +1,7 @@
 import flet as ft
 from views.home import home
 from views.login import login
+from views.create_account import create_account
 from views.train import train
 from views.workout.weight.push import push
 
@@ -13,6 +14,8 @@ def main(page: ft.Page):
         page.views.append(home(page))
         if page.route == "/login":
             page.views.append(login(page))
+        if page.route == "/create_account":
+            page.views.append(create_account(page))
         if page.route == "/train":
             page.views.append(train(page))
         if page.route == "/push":
