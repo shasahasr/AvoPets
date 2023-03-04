@@ -20,6 +20,9 @@ def main(page: ft.Page):
             page.views.append(train(page))
         if page.route == "/push":
             page.views.append(push(page))
+        if page.route == "/logout":
+            page.client_storage.clear()
+            page.go('/')
 
     def view_pop(view):
         page.views.pop()
