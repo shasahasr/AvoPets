@@ -16,18 +16,14 @@ def main(page: ft.Page):
             page.views.append(login(page))
         if page.route == "/create_account":
             page.views.append(create_account(page))
-<<<<<<< Updated upstream
         if page.route == "/train":
             page.views.append(train(page))
         if page.route == "/push":
             page.views.append(push(page))
-
-=======
         if page.route == "/logout":
             page.client_storage.clear()
             page.go('/')
-    
->>>>>>> Stashed changes
+
     def view_pop(view):
         page.views.pop()
         top_view = page.views[-1]
