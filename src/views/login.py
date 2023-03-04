@@ -33,6 +33,7 @@ def login(page: ft.Page):
     return ft.View(
         '/login',
         [
+            ft.AppBar(title=ft.Text("Login")),
             ft.Container(
                 ft.TextField(
                     label="Username",

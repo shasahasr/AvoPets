@@ -32,6 +32,7 @@ def create_account(page: ft.Page):
     return ft.View(
         '/create_account',
         [
+            ft.AppBar(title = ft.Text("Register")),
             ft.Text("Create an Account"),
             ft.Container(
                 ft.TextField(label="Username", on_change=usernameval),
