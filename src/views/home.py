@@ -58,6 +58,8 @@ def home(page: ft.Page):
                         'Login', on_click=lambda _: page.go('/login')),
                     ft.ElevatedButton(
                         'Create an Account', on_click=lambda _: page.go('/create_account')),
+                    ft.ElevatedButton(
+                        'Profile', on_click=lambda _: page.go('/profile')),
                 ])
             ]
         )

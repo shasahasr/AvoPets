@@ -4,6 +4,7 @@ from views.login import login
 from views.create_account import create_account
 from views.train import train
 from views.workout.weight.push import push
+from views.profile import profile
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
@@ -23,6 +24,8 @@ def main(page: ft.Page):
         if page.route == "/logout":
             page.client_storage.clear()
             page.go('/')
+        if page.route == "/profile":
+            page.views.append(profile(page))
 
     def view_pop(view):
         page.views.pop()
