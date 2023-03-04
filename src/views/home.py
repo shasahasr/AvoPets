@@ -7,7 +7,7 @@ def home(page: ft.Page):
             "/",
             [
                 ft.ElevatedButton(
-                    'Login', on_click=lambda _: page.go('/logout')),
+                    'Logout', on_click=lambda _: page.go('/logout')),
                 ft.Row([
                     ft.Column([
                         ft.Text("Stats", size=20),
