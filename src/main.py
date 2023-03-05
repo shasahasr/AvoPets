@@ -19,6 +19,13 @@ def main(page: ft.Page):
     page.title = "Flet counter example"
     page.client_storage.clear()
 
+    page.fonts = {
+        "Kanit": "https://raw.githubusercontent.com/google/fonts/master/ofl/kanit/Kanit-Bold.ttf",
+        "Aleo Bold Italic": "https://raw.githubusercontent.com/google/fonts/master/ofl/aleo/Aleo-BoldItalic.ttf"
+    }
+
+    page.theme = ft.Theme(font_family="Aleo Bold Italic")
+
     def route_change(route):
         page.views.clear()
         page.views.append(home(page))

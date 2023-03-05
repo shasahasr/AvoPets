@@ -19,47 +19,7 @@ def home(page: ft.Page):
         return ft.View(
             "/",
             [
-                ft.Container(
-                    ft.Text(user.get("pet")[
-                        "name"] + "'s Stats", size=40),
-                    alignment=ft.alignment.top_center,
-                ),
-                ft.Container(
-                    ft.Text("Health: " + str(user.get("pet")["health"]), size=30), alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.Text("Strength: " +
-                            str(user.get("pet")["strength"]), size=30),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.Text("Endurance: " +
-                            str(user.get("pet")["endurance"]), size=30),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.Text("XP Level " +
-                            str(user.get("pet")["currentlevel"]), size=30),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.Text("XP Progress", style="headlineSmall"),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.Column([pb]),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    content=ft.Image(
-                        src=f"./assets/idle0.gif",
-                        width=450,
-                        height=450,
-                        fit=ft.ImageFit.CONTAIN,
-                    ),
-                    alignment=ft.alignment.center
-                ),
-                ft.Container(
+            ft.Container(
                     ft.PopupMenuButton(
                         items=[
                             ft.PopupMenuItem(
@@ -104,6 +64,50 @@ def home(page: ft.Page):
                     ),
                     alignment=ft.alignment.bottom_center
                 ),
+                ft.Row([
+                    ft.Column([
+                        ft.Container(
+                            ft.Text(user.get("pet")[
+                                "name"] + "'s Stats", size=30),
+                            alignment=ft.alignment.top_center,
+                        ),
+                        ft.Container(
+                            ft.Text("Health: " + str(user.get("pet")["health"]), size=20), alignment=ft.alignment.center,
+                        ),
+                        ft.Container(
+                            ft.Text("Strength: " +
+                                    str(user.get("pet")["strength"]), size=20),
+                            alignment=ft.alignment.center,
+                        ),
+                        ft.Container(
+                            ft.Text("Endurance: " +
+                                    str(user.get("pet")["endurance"]), size=20),
+                            alignment=ft.alignment.center,
+                        ),
+                        ft.Container(
+                            ft.Text("XP Level " +
+                                    str(user.get("pet")["currentlevel"]), size=20),
+                            alignment=ft.alignment.center,
+                        ),
+                        ft.Container(
+                            ft.Text("XP Progress", size=20),
+                            alignment=ft.alignment.center,
+                        ),
+                        ft.Container(
+                            ft.Column([pb]),
+                            alignment=ft.alignment.center,
+                        ),
+                    ]),
+                    ft.Container(
+                        content=ft.Image(
+                            src=f"./assets/idle0.gif",
+                            width=550,
+                            height=550,
+                            fit=ft.ImageFit.CONTAIN,
+                        ),
+                        alignment=ft.alignment.center
+                    ),
+                ])
             ]
         )
     else:
@@ -111,31 +115,38 @@ def home(page: ft.Page):
             "/",
             [
                 ft.Container(
-                    ft.Text("AvoPets", size=60, color="#5dc447"),
+                    content= ft.Row([
+                        ft.Column([
+                            ft.Container(
+                                ft.Text("AvoPets", size=60, color="#5dc447"),
+                                alignment=ft.alignment.center,
+                            ),
+                            ft.Container(
+                                ft.Text("Join or Create an Account"),
+                                alignment=ft.alignment.center,
+                            ),
+                            ft.Container(
+                                ft.ElevatedButton(
+                                    'Login', on_click=lambda _: page.go('/login')),
+                                alignment=ft.alignment.center,
+                            ),
+                            ft.Container(
+                                ft.ElevatedButton(
+                                    'Create an Account', on_click=lambda _: page.go('/create_account')),
+                                alignment=ft.alignment.center,
+                            ),
+                        ]),
+                        ft.Container(
+                            content=ft.Image(
+                                src=f"./assets/idle0.gif",
+                                width=600,
+                                height=600,
+                                fit=ft.ImageFit.CONTAIN,
+                            ),
+                            alignment=ft.alignment.center_right
+                        ),
+                    ]),
                     alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.Text("Join or Create an Account"),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.ElevatedButton(
-                        'Login', on_click=lambda _: page.go('/login')),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    ft.ElevatedButton(
-                        'Create an Account', on_click=lambda _: page.go('/create_account')),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    content=ft.Image(
-                        src=f"./assets/idle0.gif",
-                        width=600,
-                        height=600,
-                        fit=ft.ImageFit.CONTAIN,
-                    ),
-                    alignment=ft.alignment.center
                 )
             ]
         )
