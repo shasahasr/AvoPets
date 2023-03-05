@@ -11,6 +11,10 @@ def home(page: ft.Page):
 
     if page.client_storage.contains_key("user_id"):
         user = get_user_by_id(page.client_storage.get("user_id"))
+        pb = ft.ProgressBar(width=400)
+        pb.value = ((user.get("pet")["currentxp"]) /
+                    (user.get("pet")["neededxp"]))
+        page.update()
 
         return ft.View(
             "/",
@@ -81,21 +85,8 @@ def home(page: ft.Page):
                             str(user.get("pet")["currentlevel"])),
                     alignment=ft.alignment.center,
                 ),
-                ft.Container(
-                    ft.Text(
-                        "Next Level: " + str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"])),
-                    alignment=ft.alignment.center,
-                ),
-                ft.Container(
-                    content=ft.Image(
-                        src=f"./assets/idle0.png",
-                        width=500,
-                        height=500,
-                        fit=ft.ImageFit.CONTAIN,
-                    ),
-                    alignment=ft.alignment.center
-                )
-
+                ft.Text("XP Progress", style="headlineSmall"),
+                ft.Column([pb]),
             ]
         )
     else:
