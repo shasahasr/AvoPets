@@ -53,8 +53,8 @@ def home(page: ft.Page):
                 ft.Container(
                     content=ft.Image(
                         src=f"./assets/idle0.png",
-                        width=500,
-                        height=500,
+                        width=450,
+                        height=450,
                         fit=ft.ImageFit.CONTAIN,
                     ),
                     alignment=ft.alignment.center
