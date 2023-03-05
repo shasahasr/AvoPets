@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 from firebase import *
 import flet as ft
 import sys
@@ -29,9 +30,48 @@ def battle(page: ft.Page):
     global user_block
     global boss_block
 
+    global current_image
     global p_health
     global p_endurance
     global b_health
+    fork_image = ft.Container(
+        content=ft.Image(
+            src=f"./assets/fork0.gif",
+            width=400,
+            height=400,
+            fit=ft.ImageFit.CONTAIN,
+        ),
+        alignment=ft.alignment.center
+    )
+    jab_image = ft.Container(
+        content=ft.Image(
+            src=f"./assets/left_jab0.gif",
+            width=400,
+            height=400,
+            fit=ft.ImageFit.CONTAIN,
+        ),
+        alignment=ft.alignment.center
+    )
+    idle_image = ft.Container(
+        content=ft.Image(
+            src=f"./assets/idle0.gif",
+            width=400,
+            height=400,
+            fit=ft.ImageFit.CONTAIN,
+        ),
+        alignment=ft.alignment.center
+    )
+    run_image = ft.Container(
+        content=ft.Image(
+            src=f"./assets/run0.gif",
+            width=400,
+            height=400,
+            fit=ft.ImageFit.CONTAIN,
+        ),
+        alignment=ft.alignment.center
+    )
+    current_image = idle_image
+    boss_image = run_image
 
     user = get_user_by_id(page.client_storage.get("user_id"))
     boss_health = 150 + user.get("pet")["currentlevel"] * 40 * (randint(50, 150) / 100)
@@ -46,6 +86,24 @@ def battle(page: ft.Page):
                        "/" + str(user.get("pet")["health"]))
     p_endurance = ft.Text("Endurance: " + str(user_endurance))
     b_health = ft.Text("Health: " + str(boss_health))
+
+    def change_images(string):
+        global current_image
+        print(string)
+        if string == "idle":
+            current_image = idle_image
+        else:
+            if string == "jab":
+                current_image = jab_image
+            if string == "run":
+                current_image = run_image
+            if string == "fork":
+                current_image = fork_image
+            print(current_image.content.src)
+            page.update()
+            sleep(1)
+            # current_image = idle_image
+        page.update()
 
     def boss_moves():
         global user_health
@@ -80,6 +138,9 @@ def battle(page: ft.Page):
         global boss_health
         global user_strength
         global b_health
+        global current_image
+
+        change_images("jab")
 
         if not boss_block:
             boss_health -= user_strength / 10 + randint(1, 10)
@@ -96,7 +157,9 @@ def battle(page: ft.Page):
         global user_strength
         global user_endurance
         global b_health
+        global current_image
 
+        change_images("fork")
         if not boss_block:
             boss_health -= user_strength / 7.5 + randint(1, 10)
             user_endurance -= 20
@@ -115,14 +178,14 @@ def battle(page: ft.Page):
                         ft.Text("PLAYER AVOCADO", size=50),
                         p_health,
                         p_endurance,
-                    ]),
+                    ], width=page.width/2),
                     alignment=ft.alignment.top_left
                 ),
                 ft.Container(
                     content=ft.Column([
                         ft.Text("BOSS AVOCADO", size=50),
                         b_health
-                    ]),
+                    ], width=page.width/2),
                     alignment=ft.alignment.top_left
                 )
             ]),
@@ -136,6 +199,15 @@ def battle(page: ft.Page):
             ft.Row([
                 ft.ElevatedButton("Block", width=page.width/2, height=100),
                 ft.ElevatedButton("Run", width=page.width/2, height=100),
+            ]),
+            ft.Row([
+                ft.Column([
+                    current_image
+                ],
+                    width=page.width/2),
+                ft.Column([
+                    boss_image
+                ], width=page.width/2)
             ]),
         ]
     )
