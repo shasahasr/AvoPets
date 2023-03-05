@@ -74,7 +74,7 @@ def battle(page: ft.Page):
     boss_image = run_image
 
     user = get_user_by_id(page.client_storage.get("user_id"))
-    boss_health = 150 + user.get("pet")["currentlevel"] * 40
+    boss_health = 150 + user.get("pet")["currentlevel"] * 40 * (randint(50, 150) / 100)
     boss_strength = user.get("pet")["currentlevel"] * 125
     user_health = user.get("pet")["health"]
     user_endurance = user.get("pet")["endurance"]
