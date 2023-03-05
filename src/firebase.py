@@ -40,3 +40,18 @@ def add_xp(user_id, xp):
         user["pet"]["currentlevel"] += 1
         user["pet"]["currentxp"] = user["pet"]["currentxp"] % user["pet"]["neededxp"]
     users_ref.document(user_id).set(user)
+
+def add_strength(user_id, strength):
+    user = get_user_by_id(user_id).to_dict()
+    user["pet"]["strength"] += strength
+    users_ref.document(user_id).set(user)
+
+def add_endurance(user_id, endurance):
+    user = get_user_by_id(user_id).to_dict()
+    user["pet"]["endurance"] += endurance
+    users_ref.document(user_id).set(user)
+
+def add_health(user_id, mindfulness):
+    user = get_user_by_id(user_id).to_dict()
+    user["pet"]["health"] += mindfulness
+    users_ref.document(user_id).set(user)
