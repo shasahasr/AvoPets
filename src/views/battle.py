@@ -59,7 +59,7 @@ def battle(page: ft.Page):
 
         move = randint(1, 5)
         if move < 5 and not user_block:
-            user_health -= ((boss_strength / 10 % boss_health) + randint(0, 15)) / (user.get("pet")["health"] / 50)
+            user_health -= ((boss_strength / 10 % boss_health) + randint(0, 15)) / (user.get("pet")["health"] / 100)
             p_health.value = "Health: " + str(user_health) + "/" + str(user.get("pet")["health"])
             page.update()
             if user_health < 0:

@@ -1,7 +1,11 @@
-
 from time import sleep
 import flet as ft
-
+import sys
+import os
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current))))
+sys.path.append(parent)
+from firebase import *
 
 def breathing(page: ft.Page):
     c1 = ft.Container(
@@ -47,6 +51,7 @@ def breathing(page: ft.Page):
         c.content = c2
         c2.border_radius = ft.border_radius.all(400)
         c.update()"""
+        add_xp(page.client_storage.get("user_id"), 1)
 
     button = ft.ElevatedButton("Start", on_click=animate)
     c3 = ft.Container(
