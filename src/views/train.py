@@ -20,7 +20,7 @@ def train(page: ft.Page):
                     ft.ElevatedButton(
                         text="Leg", on_click=lambda _: page.go('/login')),
                     ft.ElevatedButton(
-                        text="Cardio", on_click=lambda _: page.go('/login')),
+                        text="Cardio", on_click=lambda _: page.go('/cardio')),
                 ]
             ),
             ft.Text('Mindfulness Routine'),
