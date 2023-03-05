@@ -39,6 +39,11 @@ def add_xp(user_id, xp):
     if user["pet"]["currentxp"] > user["pet"]["neededxp"]:
         user["pet"]["currentlevel"] += 1
         user["pet"]["currentxp"] = user["pet"]["currentxp"] % user["pet"]["neededxp"]
+        user["pet"]["neededxp"] *= 1.2
+
+        user["pet"]["health"] *= 1.5
+        user["pet"]["endurance"] *= 1.5
+        user["pet"]["strength"] *= 1.5
     users_ref.document(user_id).set(user)
 
 def add_strength(user_id, strength):

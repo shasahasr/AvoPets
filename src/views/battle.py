@@ -53,9 +53,13 @@ def battle(page: ft.Page):
         global boss_strength
         global boss_health
 
+        if boss_health < 0:
+            add_xp(page.client_storage.get("user_id"), user.get("pet")["currentlevel"] * 150)
+            page.go("/")
+
         move = randint(1, 5)
         if move < 5 and not user_block:
-            user_health -= (boss_strength / 10 % boss_health) + randint(0, 15)
+            user_health -= ((boss_strength / 10 % boss_health) + randint(0, 15)) / (user.get("pet")["health"] / 50)
             p_health.value = "Health: " + str(user_health) + "/" + str(user.get("pet")["health"])
             page.update()
             if user_health < 0:
