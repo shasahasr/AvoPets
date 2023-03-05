@@ -100,7 +100,7 @@ def leg(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("Squaat",
+                        ft.Text("Squats",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
@@ -122,7 +122,7 @@ def leg(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("Press yo leg",
+                        ft.Text("Lunges",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
@@ -144,7 +144,7 @@ def leg(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("AAAAAAAAAAAAAAAAAAAAA deadlists",
+                        ft.Text("Calf Raises",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
@@ -166,14 +166,14 @@ def leg(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("AAAaAAAAAAAa Caflf lowers",
+                        ft.Text("Stairs",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE4Counter),
                                 e4TextControl,
-                                ft.Text(" reps",
+                                ft.Text(" flights",
                                         color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE4Counter),

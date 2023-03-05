@@ -109,7 +109,7 @@ def push(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("Pushup",
+                        ft.Text("Pushups",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[

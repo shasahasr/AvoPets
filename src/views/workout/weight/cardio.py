@@ -88,14 +88,14 @@ def cardio(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("tread water balding boy",
+                        ft.Text("Running",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE1Counter),
                                 e1TextControl,
-                                ft.Text(" reps",
+                                ft.Text(" miles",
                                         color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE1Counter),
@@ -109,14 +109,14 @@ def cardio(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("run for the hills",
+                        ft.Text("Walking",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE2Counter),
                                 e2TextControl,
-                                ft.Text(" reps",
+                                ft.Text(" miles",
                                         color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE2Counter),
@@ -130,7 +130,7 @@ def cardio(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("play chess",
+                        ft.Text("Jump Rope",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
@@ -151,14 +151,14 @@ def cardio(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("swinging",
+                        ft.Text("Biking",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE4Counter),
                                 e4TextControl,
-                                ft.Text(" reps",
+                                ft.Text(" miles",
                                         color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE4Counter),
