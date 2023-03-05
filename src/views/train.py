@@ -13,7 +13,8 @@ def train(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text('Weights Routine', size=50),
+                        ft.Text('Weights Routine', size=50,
+                                color=ft.colors.BLACK),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
@@ -30,11 +31,14 @@ def train(page: ft.Page):
                 ),
                 alignment=ft.alignment.center,
                 bgcolor=ft.colors.CYAN,
+                padding=15,
+                margin=5,
             ),
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text('Mindfulness Routine', size=50),
+                        ft.Text('Mindfulness Routine', size=50,
+                                color=ft.colors.BLACK),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(text="Breathing",
@@ -51,7 +55,18 @@ def train(page: ft.Page):
                 ),
                 alignment=ft.alignment.center,
                 bgcolor=ft.colors.CYAN,
+                padding=15,
+                margin=5,
 
             ),
+            ft.Container(
+                content=ft.Image(
+                    src=f"./assets/idle0.png",
+                    width=600,
+                    height=600,
+                    fit=ft.ImageFit.CONTAIN,
+                ),
+                alignment=ft.alignment.center
+            )
         ]
     )
