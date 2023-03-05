@@ -38,28 +38,27 @@ def home(page: ft.Page):
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
-                    ft.Row([
-                        ft.Text("XP Level " +
-                                str(user.get("pet")["currentlevel"])),
-                        ft.Text(
-                            str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"]))
-                    ]),
+                    ft.Text("XP Level " +
+                            str(user.get("pet")["currentlevel"])),
                     alignment=ft.alignment.center,
                 ),
-                ft.Row([
-                    ft.Container(ft.ElevatedButton(
-                        'Train',
-                        on_click=lambda _: page.go('/train'),
-                    ), alignment=ft.alignment.bottom_center),
-                    ft.Container(ft.ElevatedButton(
-                        'Battle',
-                        on_click=lambda _: page.go('/battle'),
-                    ), alignment=ft.alignment.bottom_center),
-                    ft.Container(ft.ElevatedButton(
-                        'Profile',
-                        on_click=lambda _: page.go('/profile'),
-                    ), alignment=ft.alignment.bottom_center),
-                ]),
+                ft.Container(
+                    ft.Text(
+                        str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"])),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(content=ft.ElevatedButton(
+                    'Train',
+                    on_click=lambda _: page.go('/train'),
+                ), alignment=ft.alignment.bottom_center),
+                ft.Container(content=ft.ElevatedButton(
+                    'Battle',
+                    on_click=lambda _: page.go('/battle'),
+                ), alignment=ft.alignment.bottom_center),
+                ft.Container(content=ft.ElevatedButton(
+                    'Profile',
+                    on_click=lambda _: page.go('/profile'),
+                ), alignment=ft.alignment.bottom_center),
             ]
         )
     else:
@@ -67,7 +66,7 @@ def home(page: ft.Page):
             "/",
             [
                 ft.Container(
-                    ft.Text("AvoPets", size=60, color="#5a954a"),
+                    ft.Text("AvoPets", size=60, color="#5dc447"),
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
