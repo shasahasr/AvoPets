@@ -33,7 +33,7 @@ def login(page: ft.Page):
     return ft.View(
         '/login',
         [
-            ft.AppBar(title=ft.Text("Login")),
+            ft.AppBar(title=ft.Text("Log In")),
             ft.Container(
                 ft.TextField(
                     label="Username",
@@ -51,7 +51,7 @@ def login(page: ft.Page):
                 padding=50,
             ),
             ft.Container(
-                ft.FilledButton(text="Login"),
+                ft.FilledButton(text="Log In"),
                 alignment=ft.alignment.center,
                 padding=50,
                 on_click= verifylogin
