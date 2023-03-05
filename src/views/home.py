@@ -53,6 +53,15 @@ def home(page: ft.Page):
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
+                    content=ft.Image(
+                        src=f"./assets/idle0.png",
+                        width=500,
+                        height=500,
+                        fit=ft.ImageFit.CONTAIN,
+                    ),
+                    alignment=ft.alignment.center
+                ),
+                ft.Container(
                     ft.PopupMenuButton(
                         items=[
                             ft.PopupMenuItem(
