@@ -60,3 +60,8 @@ def add_health(user_id, mindfulness):
     user = get_user_by_id(user_id).to_dict()
     user["pet"]["health"] += mindfulness
     users_ref.document(user_id).set(user)
+
+def change_name(user_id, name):
+    user = get_user_by_id(user_id).to_dict()
+    user["pet"]["name"] = name
+    users_ref.document(user_id).set(user)
