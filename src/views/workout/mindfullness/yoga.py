@@ -1,7 +1,7 @@
 import flet as ft
 
 
-def breathing(page: ft.Page):
+def yoga(page: ft.Page):
     return ft.View(
         '/breathing',
         [
