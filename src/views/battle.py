@@ -103,6 +103,8 @@ def battle(page: ft.Page):
                 current_image_container[0] = run_image
             elif string == "fork":
                 current_image_container[0] = fork_image
+                page.update()
+                sleep(2)
             print(current_image_container[0].content.src)
             page.update()
             sleep(1)
