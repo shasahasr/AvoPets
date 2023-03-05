@@ -11,3 +11,15 @@ For example, we wanted to connect to either FitBit or Apple Watch APIs to make t
 
 We used Firebase and Firestore for login credentials + extra variables that change based on account.
 
+Code Written by Aditya Tiwari, Chandu Pedadda, and Shaunak Sahasrabudhe.
+Art done by Isamu Mojica.
+
+
+
+
+
+
+
+
+
+we are all freshman lolol
