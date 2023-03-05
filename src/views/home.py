@@ -102,7 +102,7 @@ def home(page: ft.Page):
                                 on_click=lambda _: page.go('/logout'),
                             ),
                         ],
-                        icon=ft.icons.MENU_ROUNDED,
+                        icon=ft.icons.HOME_ROUNDED,
                     ),
                     alignment=ft.alignment.bottom_center
                 ),
