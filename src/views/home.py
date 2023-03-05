@@ -1,10 +1,11 @@
+from firebase import *
 import flet as ft
 import sys
 import os
 current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
 sys.path.append(parent)
-from firebase import *
+
 
 def home(page: ft.Page):
 
@@ -19,13 +20,19 @@ def home(page: ft.Page):
                 ft.Row(
                     [
                         ft.Column([
-                            ft.Text(user.get("pet")["name"] + "'s Stats", size=20),
-                            ft.Text("Health: " + str(user.get("pet")["health"])),
-                            ft.Text("Strength: " + str(user.get("pet")["strength"])),
-                            ft.Text("Endurance: " + str(user.get("pet")["endurance"])),
+                            ft.Text(user.get("pet")[
+                                    "name"] + "'s Stats", size=20),
+                            ft.Text("Health: " +
+                                    str(user.get("pet")["health"])),
+                            ft.Text("Strength: " +
+                                    str(user.get("pet")["strength"])),
+                            ft.Text("Endurance: " +
+                                    str(user.get("pet")["endurance"])),
                             ft.Row([
-                                ft.Text("XP Level " + str(user.get("pet")["currentlevel"])),
-                                ft.Text(str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"]))
+                                ft.Text("XP Level " +
+                                        str(user.get("pet")["currentlevel"])),
+                                ft.Text(
+                                    str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"]))
                             ])
                         ]),
                         ft.Text("Avocado Goes Here", size=50),
@@ -60,6 +67,10 @@ def home(page: ft.Page):
                         'Create an Account', on_click=lambda _: page.go('/create_account')),
                     ft.ElevatedButton(
                         'Profile', on_click=lambda _: page.go('/profile')),
+                    ft.ElevatedButton(
+                        'Train',
+                        on_click=lambda _: page.go('/train'),
+                    )
                 ])
             ]
         )
