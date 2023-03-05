@@ -130,9 +130,9 @@ def battle(page: ft.Page):
                             randint(0, 15)) / (user.get("pet")["health"] / 100)
             p_health.value = "Health: " + \
                 str(user_health) + "/" + str(user.get("pet")["health"])
-            page.update()
             if user_health < 0:
                 page.go("/")
+            page.update()
         elif move == 5:
             boss_block = True
         else:
@@ -173,6 +173,9 @@ def battle(page: ft.Page):
             page.update()
         boss_moves()
 
+    def run(e):
+        page.go("/")
+
     return ft.View(
         "/battle",
         [
@@ -203,8 +206,9 @@ def battle(page: ft.Page):
                                   height=100, on_click=fork),
             ]),
             ft.Row([
-                ft.ElevatedButton("Block", width=page.width/2, height=100),
-                ft.ElevatedButton("Run", width=page.width/2, height=100),
+                # ft.ElevatedButton("Block", width=page.width/2, height=100),
+                ft.ElevatedButton("Run", width=page.width,
+                                  height=100, on_click=run),
             ]),
             ft.Row([
                 ft.Column(
