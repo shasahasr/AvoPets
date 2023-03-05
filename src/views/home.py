@@ -27,7 +27,7 @@ def home(page: ft.Page):
                                 ft.Text(user.get("pet")[
                                     "name"] + "'s Stats", size=40),
                                 alignment=ft.alignment.top_center,
-                                padding= ft.padding.only(top=10)
+                                padding= ft.padding.only(top=(page.height/8)*2)
                             ),
                             ft.Container(
                                 ft.Text("Health: " + str(floor(user.get("pet")["health"])), size=30), alignment=ft.alignment.center,
@@ -54,7 +54,7 @@ def home(page: ft.Page):
                             ft.Container(
                                 ft.Column([pb]),
                                 alignment=ft.alignment.center,
-                                padding= ft.padding.only(bottom=10)
+                                padding= ft.padding.only(bottom=(page.height/8)*2)
                             ),
                         ]),
                         width=page.width/2,
@@ -63,8 +63,8 @@ def home(page: ft.Page):
                     ft.Container(
                         content=ft.Image(
                             src=f"./assets/idle0.gif",
-                            width=page.height/2,
-                            height=page.height/2,
+                            width=(page.height/8) * 7,
+                            height=(page.height/8) * 7,
                             fit=ft.ImageFit.CONTAIN,
                         ),
                         alignment=ft.alignment.center
@@ -122,7 +122,7 @@ def home(page: ft.Page):
                         ),
                     ],
                 ),
-            ]
+            ],
         )
     else:
         return ft.View(
