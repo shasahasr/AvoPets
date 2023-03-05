@@ -101,7 +101,7 @@ def battle(page: ft.Page):
             boss_health -= user_strength / 7.5 + randint(1, 10)
             user_endurance -= 20
             b_health.value = "Health: " + str(boss_health)
-            page.refresh()
+            page.update()
         boss_moves()
 
     return ft.View(
