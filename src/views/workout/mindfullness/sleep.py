@@ -8,7 +8,7 @@ def sleep(page: ft.Page):
 
             ft.AppBar(title=ft.Text('Sleep'),
                       bgcolor=ft.colors.SURFACE_VARIANT),
-            ft.Text("Sleep Good pls"),
+            ft.Text("Sleep Good please!"),
             ft.Text("How many hours did you sleep last night?"),
             ft.Slider(min=0, max=15, divisions=15,
                       value=8, label="{value} Hours")
