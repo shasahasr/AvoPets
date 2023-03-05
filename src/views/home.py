@@ -58,12 +58,23 @@ def home(page: ft.Page):
         return ft.View(
             "/",
             [
-                ft.Text("Join or Create an Account"),
-                ft.Row([
+                ft.Container(
+                    ft.Text("AvoPets", size=60),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("Join or Create an Account"),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
                     ft.ElevatedButton(
                         'Login', on_click=lambda _: page.go('/login')),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
                     ft.ElevatedButton(
                         'Create an Account', on_click=lambda _: page.go('/create_account')),
-                ])
+                    alignment=ft.alignment.center,
+                ),
             ]
         )
