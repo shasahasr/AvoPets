@@ -72,7 +72,15 @@ def battle(page: ft.Page):
     )
     current_image = idle_image
     current_image_container = [current_image]
-    boss_image = run_image
+    boss_image = ft.Container(
+        content=ft.Image(
+            src=f"./assets/boss #1.gif",
+            width=400,
+            height=400,
+            fit=ft.ImageFit.CONTAIN,
+        ),
+        alignment=ft.alignment.center
+    )
 
     user = get_user_by_id(page.client_storage.get("user_id"))
     boss_health = 150 + \
