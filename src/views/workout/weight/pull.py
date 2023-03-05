@@ -9,16 +9,16 @@ from firebase import *
 def pull(page: ft.Page):
 
     e1TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e2TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e3TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e4TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     def decreaseE1Counter(e):
 
@@ -89,21 +89,20 @@ def pull(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Pullups",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE1Counter),
                                 e1TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE1Counter),
                             ]
                         ),
                     ],
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),
@@ -111,21 +110,20 @@ def pull(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Curl your mom",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE2Counter),
                                 e2TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE2Counter),
                             ]
                         ),
                     ],
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),
@@ -133,21 +131,20 @@ def pull(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Lat Pull Downs",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE3Counter),
                                 e3TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE3Counter),
                             ]
                         ),
                     ]
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),
@@ -155,21 +152,20 @@ def pull(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Dumbell Rows",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE4Counter),
                                 e4TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE4Counter),
                             ]
                         ),
                     ],
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),

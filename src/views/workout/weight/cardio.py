@@ -9,16 +9,16 @@ from firebase import *
 def cardio(page: ft.Page):
 
     e1TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e2TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e3TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e4TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     def decreaseE1Counter(e):
 
@@ -89,14 +89,14 @@ def cardio(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("tread water balding boy",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE1Counter),
                                 e1TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE1Counter),
                             ]
@@ -111,14 +111,14 @@ def cardio(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("run for the hills",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE2Counter),
                                 e2TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE2Counter),
                             ]
@@ -133,14 +133,14 @@ def cardio(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("play chess",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE3Counter),
                                 e3TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE3Counter),
                             ]
@@ -155,14 +155,14 @@ def cardio(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("swinging",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE4Counter),
                                 e4TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE4Counter),
                             ]
