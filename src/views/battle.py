@@ -95,9 +95,9 @@ def battle(page: ft.Page):
         else:
             if string == "jab":
                 current_image = jab_image
-            if string == "run":
+            elif string == "run":
                 current_image = run_image
-            if string == "fork":
+            elif string == "fork":
                 current_image = fork_image
             print(current_image.content.src)
             page.update()
