@@ -86,6 +86,16 @@ def home(page: ft.Page):
                         "Next Level: " + str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"])),
                     alignment=ft.alignment.center,
                 ),
+                ft.Container(
+                    content=ft.Image(
+                        src=f"./assets/idle0.png",
+                        width=500,
+                        height=500,
+                        fit=ft.ImageFit.CONTAIN,
+                    ),
+                    alignment=ft.alignment.center
+                )
+
             ]
         )
     else:
@@ -110,11 +120,14 @@ def home(page: ft.Page):
                         'Create an Account', on_click=lambda _: page.go('/create_account')),
                     alignment=ft.alignment.center,
                 ),
-                ft.Image(
-                    src=f"./assets/idle0.png",
-                    width=200,
-                    height=200,
-                    fit=ft.ImageFit.CONTAIN,
+                ft.Container(
+                    content=ft.Image(
+                        src=f"./assets/idle0.png",
+                        width=600,
+                        height=600,
+                        fit=ft.ImageFit.CONTAIN,
+                    ),
+                    alignment=ft.alignment.center
                 )
             ]
         )
