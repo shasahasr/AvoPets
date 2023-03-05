@@ -52,7 +52,7 @@ def breathing(page: ft.Page):
     c3 = ft.Container(
         content=ft.Column(
             controls=[
-                ft.Text("Inhale as it expands, exhale as it shrinks."), c, button]
+                ft.Text("Exhale as it expands, inhale as it shrinks."), c, button]
         ),
         alignment=ft.alignment.center
     )
