@@ -44,6 +44,8 @@ def main(page: ft.Page):
             page.go('/')
         if page.route == "/profile":
             page.views.append(profile(page))
+        if page.route == "/battle":
+            page.views.append(battle(page))
 
     def view_pop(view):
         page.views.pop()
