@@ -12,16 +12,16 @@ sys.path.append(parent)
 def meditation(page: ft.Page):
 
     e1TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e2TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e3TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     e4TextControl = ft.Text(value="0",
-                            color=ft.colors.BLACK)
+                            color=ft.colors.WHITE)
 
     def decreaseE1Counter(e):
 
