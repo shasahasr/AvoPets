@@ -15,6 +15,7 @@ Code Written by Aditya Tiwari, Chandu Pedadda, and Shaunak Sahasrabudhe.
 Art done by Isamu Mojica.
 
 How to run the program:
+MAKE SURE TO DO ALL STEPS IN VSCODE TERMINAL!!
 
 first, verify if you have Python installed, run
 ```
@@ -30,9 +31,15 @@ source activate
 activate
 ```
 
-install the following packages
+cd back into the AvoPets regular directory by typing ```cd ..``` twice
+install the following packages by running
 ```
-python -m pip install flet, firebase-admin, firebase
+#Do on both Windows and MacOS
+python -m pip install flet
+# For Arm64 it is arch --arm64 brew install ... and Intel is just brew install 
+arch --arm64 brew install firebase-admin
+#Windows
+pip install firebase-admin
 ```
 
 now, navigate back to the ./src file, and run the main file
