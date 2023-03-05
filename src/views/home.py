@@ -84,7 +84,7 @@ def home(page: ft.Page):
                             height=page.height/8,
                             width=page.width/4,
                             alignment=ft.alignment.top_center,
-                            padding=60
+                            
                         ),
                         ft.Container(
                             content=ft.Row(
@@ -97,7 +97,7 @@ def home(page: ft.Page):
                             height=page.height/8,
                             width=page.width/4,
                             alignment=ft.alignment.top_center,
-                            padding=60
+                            
                         ),
                         ft.Container(
                             content=ft.Row(
@@ -110,7 +110,6 @@ def home(page: ft.Page):
                             height=page.height/8,
                             width=page.width/4,
                             alignment=ft.alignment.top_center,
-                            padding=60,
                         ),
                         ft.Container(
                             content=ft.Row(
@@ -123,7 +122,7 @@ def home(page: ft.Page):
                             height=page.height/8,
                             width=page.width/4,
                             alignment=ft.alignment.top_center,
-                            padding=60
+                            
                         ),
                     ],
                 ),
