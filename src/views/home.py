@@ -53,7 +53,8 @@ def home(page: ft.Page):
                             ),
                             on_click=lambda _: page.go('/logout'),
                         ),
-                    ]
+                    ],
+                    icon=ft.icons.MENU_ROUNDED,
                 ),
                 ft.Container(
                     ft.Text(user.get("pet")[
