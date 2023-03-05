@@ -137,21 +137,21 @@ def home(page: ft.Page):
                         ft.Column([
                             ft.Container(
                                 ft.Text("AvoPets", size=60, color="#5dc447"),
-                                alignment=ft.alignment.center,
+                                alignment=ft.alignment.top_left,
                             ),
                             ft.Container(
                                 ft.Text("Log In or Create an Account"),
-                                alignment=ft.alignment.center,
+                                alignment=ft.alignment.top_left,
                             ),
                             ft.Container(
                                 ft.ElevatedButton(
                                     'Log In', on_click=lambda _: page.go('/login')),
-                                alignment=ft.alignment.center,
+                                alignment=ft.alignment.top_left,
                             ),
                             ft.Container(
                                 ft.ElevatedButton(
                                     'Create an Account', on_click=lambda _: page.go('/create_account')),
-                                alignment=ft.alignment.center,
+                                alignment=ft.alignment.top_left,
                             ),
                         ]),
                         ft.Container(
