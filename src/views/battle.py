@@ -1,6 +1,7 @@
 from random import randint
 from time import sleep
 from firebase import *
+from math import *
 import flet as ft
 import sys
 import os
@@ -85,17 +86,17 @@ def battle(page: ft.Page):
     user = get_user_by_id(page.client_storage.get("user_id"))
     boss_health = 150 + \
         user.get("pet")["currentlevel"] * 40 * (randint(50, 150) / 100)
-    boss_strength = user.get("pet")["currentlevel"] * 125
+    boss_strength = user.get("pet")["currentlevel"] * 60 * (randint(50, 150) / 100)
     user_health = user.get("pet")["health"]
     user_endurance = user.get("pet")["endurance"]
     user_strength = user.get("pet")["strength"]
     user_block = False
     boss_block = False
 
-    p_health = ft.Text("Health: " + str(user_health) +
-                       "/" + str(user.get("pet")["health"]))
-    p_endurance = ft.Text("Endurance: " + str(user_endurance))
-    b_health = ft.Text("Health: " + str(boss_health))
+    p_health = ft.Text("Health: " + str(floor(user_health)) +
+                       "/" + str(floor(user.get("pet")["health"])))
+    p_endurance = ft.Text("Endurance: " + str(floor(user_endurance)))
+    b_health = ft.Text("Health: " + str(floor(boss_health)))
 
     def change_images(string):
         global current_image_container
@@ -137,7 +138,7 @@ def battle(page: ft.Page):
             user_health -= ((boss_strength / 10 % boss_health) +
                             randint(0, 15)) / (user.get("pet")["health"] / 100)
             p_health.value = "Health: " + \
-                str(user_health) + "/" + str(user.get("pet")["health"])
+                str(floor(user_health)) + "/" + str(floor(user.get("pet")["health"]))
             if user_health < 0:
                 page.go("/")
             page.update()
@@ -152,14 +153,19 @@ def battle(page: ft.Page):
         global boss_health
         global user_strength
         global b_health
+        global p_endurance
         global current_image_container
 
         change_images("jab")
+        
+        if user_endurance <= 0:
+            page.go("/")
 
         if not boss_block:
             boss_health -= user_strength / 10 + randint(1, 10)
             user_endurance -= 10
-            b_health.value = "Health: " + str(boss_health)
+            b_health.value = "Health: " + str(floor(boss_health))
+            p_endurance.value = "Endurance: " + str(floor(user_endurance))
             page.update()
         else:
             boss_block = False
@@ -171,18 +177,41 @@ def battle(page: ft.Page):
         global user_strength
         global user_endurance
         global b_health
+        global p_endurance
         global current_image
+
+        if user_endurance <= 0:
+            page.go("/")
 
         change_images("fork")
         if not boss_block:
-            boss_health -= user_strength / 7.5 + randint(1, 10)
-            user_endurance -= 20
-            b_health.value = "Health: " + str(boss_health)
+            boss_health -= user_strength / 5 + randint(1, 10)
+            user_endurance -= 15
+            b_health.value = "Health: " + str(floor(boss_health))
+            p_endurance.value = "Endurance: " + str(floor(user_endurance))
             page.update()
         boss_moves()
 
-    def run(e):
+    def heal(e):
+        global boss_block
+        global boss_health
+        global user_strength
+        global user_health
+        global user_endurance
+        global b_health
+        global p_endurance
+        global p_health
+        global current_image
 
+        user_health += user.get("pet")["health"] / 10
+        user_endurance -= 15
+        p_health.value = "Health: " + str(floor(user_health)) + "/" + str(floor(user.get("pet")["health"]))
+        p_endurance.value = "Endurance: " + str(floor(user_endurance))
+        page.update()
+        boss_moves()
+        
+
+    def run(e):
         page.go("/")
 
     return ft.View(
@@ -215,8 +244,9 @@ def battle(page: ft.Page):
                                   height=100, on_click=fork),
             ]),
             ft.Row([
-                # ft.ElevatedButton("Block", width=page.width/2, height=100),
-                ft.ElevatedButton("Run", width=page.width,
+                ft.ElevatedButton("Heal", width=page.width/2,
+                                  height=100, on_click=heal),
+                ft.ElevatedButton("Run", width=page.width/2,
                                   height=100, on_click=run),
             ]),
             ft.Row([
