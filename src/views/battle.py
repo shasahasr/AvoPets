@@ -30,7 +30,7 @@ def battle(page: ft.Page):
     global user_block
     global boss_block
 
-    global current_image
+    global current_image_container
     global p_health
     global p_endurance
     global b_health
@@ -45,7 +45,7 @@ def battle(page: ft.Page):
     )
     jab_image = ft.Container(
         content=ft.Image(
-            src=f"./assets/left_jab0.gif",
+            src=f"./assets/right_jab0.gif",
             width=400,
             height=400,
             fit=ft.ImageFit.CONTAIN,
@@ -71,10 +71,12 @@ def battle(page: ft.Page):
         alignment=ft.alignment.center
     )
     current_image = idle_image
+    current_image_container = [current_image]
     boss_image = run_image
 
     user = get_user_by_id(page.client_storage.get("user_id"))
-    boss_health = 150 + user.get("pet")["currentlevel"] * 40 * (randint(50, 150) / 100)
+    boss_health = 150 + \
+        user.get("pet")["currentlevel"] * 40 * (randint(50, 150) / 100)
     boss_strength = user.get("pet")["currentlevel"] * 125
     user_health = user.get("pet")["health"]
     user_endurance = user.get("pet")["endurance"]
@@ -88,22 +90,24 @@ def battle(page: ft.Page):
     b_health = ft.Text("Health: " + str(boss_health))
 
     def change_images(string):
-        global current_image
+        global current_image_container
         print(string)
         if string == "idle":
-            current_image = idle_image
+            current_image_container[0] = idle_image
         else:
             if string == "jab":
-                current_image = jab_image
+                current_image_container[0] = jab_image
+                page.update()
+                sleep(1)
             elif string == "run":
-                current_image = run_image
+                current_image_container[0] = run_image
             elif string == "fork":
-                current_image = fork_image
-            print(current_image.content.src)
+                current_image_container[0] = fork_image
+            print(current_image_container[0].content.src)
             page.update()
             sleep(1)
-            # current_image = idle_image
-        page.update()
+            current_image_container[0] = idle_image
+        # page.update()
 
     def boss_moves():
         global user_health
@@ -138,7 +142,7 @@ def battle(page: ft.Page):
         global boss_health
         global user_strength
         global b_health
-        global current_image
+        global current_image_container
 
         change_images("jab")
 
@@ -201,9 +205,8 @@ def battle(page: ft.Page):
                 ft.ElevatedButton("Run", width=page.width/2, height=100),
             ]),
             ft.Row([
-                ft.Column([
-                    current_image
-                ],
+                ft.Column(
+                    current_image_container,
                     width=page.width/2),
                 ft.Column([
                     boss_image
