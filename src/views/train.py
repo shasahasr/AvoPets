@@ -26,10 +26,14 @@ def train(page: ft.Page):
             ft.Text('Mindfulness Routine'),
             ft.Row(
                 controls=[
-                    ft.ElevatedButton(text="Breath"),
-                    ft.ElevatedButton(text="/"),
-                    ft.ElevatedButton(text="/"),
-                    ft.ElevatedButton(text="/"),
+                    ft.ElevatedButton(text="Breathing",
+                                      on_click=lambda _: page.go('/breathing')),
+                    ft.ElevatedButton(text="Meditation",
+                                      on_click=lambda _: page.go('/meditation')),
+                    ft.ElevatedButton(
+                        text="Yoga", on_click=lambda _: page.go('/yoga')),
+                    ft.ElevatedButton(
+                        text="Sleep", on_click=lambda _: page.go('/sleep')),
                 ]
             ),
 

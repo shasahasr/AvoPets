@@ -31,6 +31,14 @@ def main(page: ft.Page):
             page.views.append(cardio(page))
         if page.route == "/leg":
             page.views.append(leg(page))
+        if page.route == "/breathing":
+            page.views.append(leg(page))
+        if page.route == "/meditation":
+            page.views.append(leg(page))
+        if page.route == "/yoga":
+            page.views.append(leg(page))
+        if page.route == "/sleep":
+            page.views.append(leg(page))
         if page.route == "/logout":
             page.client_storage.clear()
             page.go('/')
