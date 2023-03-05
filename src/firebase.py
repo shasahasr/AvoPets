@@ -11,7 +11,7 @@ def get_user_by_email(email):
     for user in users_ref.get():
         if email == user.get("email"):
             return user
-    return None
+    return False
 
 def check_login(email, password):
     if email == "" or password == "":
@@ -30,7 +30,7 @@ def register(email, password):
             if email == user.get('email'):
                 return False
     
-    new_user = users_ref.add({"email": email, "password": password, "pet": {"endurance": 100, "health": 100, "name": "pet name", "strength": 100, "neededxp": 100, "currentxp": 0, "currentlevel": 1}, "stats": {"mindfulness": 0, "running": 0, "weights": 0}})
+    new_user = users_ref.add({"email": email, "password": password, "pet": {"endurance": 100, "health": 100, "name": "pet name", "strength": 100, "neededxp": 100, "currentxp": 0, "currentlevel": 1}, "stats": {"mindfulness": 0, "running": 0, "weights": 0}, "friends": []})
     return new_user[1].id
 
 def add_xp(user_id, xp):
@@ -65,3 +65,11 @@ def change_name(user_id, name):
     user = get_user_by_id(user_id).to_dict()
     user["pet"]["name"] = name
     users_ref.document(user_id).set(user)
+
+def add_friend(user_id, add_nickname):
+    user = get_user_by_id(user_id).to_dict()
+    friend = get_user_by_email(add_nickname)
+    if friend:
+        user["friends"].append(friend)
+        return True
+    return False
