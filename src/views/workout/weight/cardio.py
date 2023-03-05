@@ -80,6 +80,29 @@ def cardio(page: ft.Page):
         add_endurance(page.client_storage.get("user_id"), int(e1TextControl.value) + int(e2TextControl.value) + int(e3TextControl.value) + int(e4TextControl.value))
         page.go("/")
 
+    dlg = ft.AlertDiolog(
+        title=ft.Text("Information about cardio: "),
+        content=ft.Text(
+        """
+        Benefits of cardio:
+        Keep excess pounds at bay.
+        Increase your stamina, fitness and strength.
+        Ward off viral illnesses.
+        Reduce your health risks.
+        Manage chronic conditions.
+        Strengthen your heart.
+        Keep your arteries clear.
+        Boost your mood.
+
+        Information from: https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/aerobic-exercise/art-20045541
+        """
+    ))
+
+    def open_dlg(e):
+        page.dialog = dlg
+        dlg.open = True
+        page.update()
+
     return ft.View(
         '/cardio',
         [
@@ -170,7 +193,7 @@ def cardio(page: ft.Page):
                 alignment=ft.alignment.center,
             ),
             ft.Container(
-                content = ft.ElevatedButton("Finish Workout", on_click = finishWorkout)
+                content = ft.Row([ft.ElevatedButton("Finish Workout", on_click = finishWorkout), ft.ElevatedButton("More Info", on_click=open_dlg)])
             ),
         ]
     )
