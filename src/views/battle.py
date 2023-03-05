@@ -174,6 +174,7 @@ def battle(page: ft.Page):
         boss_moves()
 
     def run(e):
+
         page.go("/")
 
     return ft.View(
