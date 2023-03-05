@@ -30,7 +30,6 @@ def train(page: ft.Page):
                     ]
                 ),
                 alignment=ft.alignment.center,
-                bgcolor=ft.colors.CYAN,
                 padding=15,
                 margin=5,
             ),
@@ -54,7 +53,6 @@ def train(page: ft.Page):
                     ]
                 ),
                 alignment=ft.alignment.center,
-                bgcolor=ft.colors.CYAN,
                 padding=15,
                 margin=5,
 
