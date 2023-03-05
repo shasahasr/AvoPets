@@ -13,8 +13,7 @@ def train(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text('Weights Routine', size=50,
-                                color=ft.colors.BLACK),
+                        ft.Text('Weights Routine', size=50),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
@@ -36,8 +35,7 @@ def train(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text('Mindfulness Routine', size=50,
-                                color=ft.colors.BLACK),
+                        ft.Text('Mindfulness Routine', size=50),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(text="Breathing",

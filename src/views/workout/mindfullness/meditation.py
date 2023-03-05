@@ -1,15 +1,16 @@
+from firebase import *
 from time import sleep
 import flet as ft
 import sys
 import os
 current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current))))
+parent = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.dirname(current))))
 sys.path.append(parent)
-from firebase import *
 
 
 def meditation(page: ft.Page):
-    
+
     e1TextControl = ft.Text(value="0",
                             color=ft.colors.BLACK)
 
@@ -116,26 +117,26 @@ def meditation(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Time Meditated: ",
-                                color=ft.colors.BLACK),
+                                color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE1Counter),
                                 e1TextControl,
                                 ft.Text(" minutes",
-                                        color=ft.colors.BLACK),
+                                        color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE1Counter),
                             ]
                         ),
                     ],
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),
             ft.Container(
-                content = ft.ElevatedButton("Finish Meditating", on_click = finishWorkout)
+                content=ft.ElevatedButton(
+                    "Finish Meditating", on_click=finishWorkout)
             ),
         ]
     )
