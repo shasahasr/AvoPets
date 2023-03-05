@@ -58,10 +58,10 @@ def battle(page: ft.Page):
             user_health -= (boss_strength / 10 % boss_health) + randint(0, 15)
             p_health.value = "Health: " + str(user_health) + "/" + str(user.get("pet")["health"])
             page.update()
-            print("attacked")
+            if user_health < 0:
+                page.go("/")
         elif move == 5:
             boss_block = True
-            print("block")
         else:
             user_block = False
 
