@@ -104,7 +104,6 @@ def yoga(page: ft.Page):
                         ),
                     ],
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),
@@ -118,7 +117,7 @@ def yoga(page: ft.Page):
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE2Counter),
                                 e2TextControl,
-                                ft.Text(" seconds",
+                                ft.Text(" minutes",
                                         color=ft.colors.BLACK),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE2Counter),
@@ -126,7 +125,6 @@ def yoga(page: ft.Page):
                         ),
                     ],
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),
@@ -140,7 +138,7 @@ def yoga(page: ft.Page):
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE3Counter),
                                 e3TextControl,
-                                ft.Text(" seconds",
+                                ft.Text(" minutes",
                                         color=ft.colors.BLACK),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE3Counter),
@@ -148,7 +146,6 @@ def yoga(page: ft.Page):
                         ),
                     ]
                 ),
-                bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
             ),
@@ -162,7 +159,7 @@ def yoga(page: ft.Page):
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE4Counter),
                                 e4TextControl,
-                                ft.Text(" seconds",
+                                ft.Text(" minutes",
                                         color=ft.colors.BLACK),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE4Counter),

@@ -37,6 +37,21 @@ def breathing(page: ft.Page):
         alignment=ft.alignment.center
     )
 
+    dlg = ft.AlertDiolog(
+        title=ft.Text("Information about breathing: "),
+        content=ft.Text(
+        """
+        When you breathe deeply, the air coming in through your nose fully fills your lungs, and the lower belly rises. Deep abdominal breathing encourages full oxygen exchange — that is, the beneficial trade of incoming oxygen for outgoing carbon dioxide. Not surprisingly, it can slow the heartbeat and lower or stabilize blood pressure.
+
+        Information from: https://www.health.harvard.edu/mind-and-mood/relaxation-techniques-breath-control-helps-quell-errant-stress-response
+        """
+    ))
+
+    def open_dlg(e):
+        page.dialog = dlg
+        dlg.open = True
+        page.update()
+
     def animate(e):
         if c.content == c1:
             c.content = c2
@@ -46,19 +61,15 @@ def breathing(page: ft.Page):
         c1.border_radius = ft.border_radius.all(400)
         c2.border_radius = ft.border_radius.all(400)
         c.update()
-        """
-        sleep(5.5)
-        c.content = c2
-        c2.border_radius = ft.border_radius.all(400)
-        c.update()"""
         add_xp(page.client_storage.get("user_id"), 5)
         add_health(page.client_storage.get("user_id"), 5)
 
     button = ft.ElevatedButton("Start", on_click=animate)
+    dlgbutton = ft.ElevatedButton("Know More About Breathing", on_click=open_dlg)
     c3 = ft.Container(
         content=ft.Column(
             controls=[
-                ft.Text("Exhale as it expands, inhale as it shrinks."), c, button]
+                ft.Text("Exhale as it expands, inhale as it shrinks."), c, fr.Row([button, dlgbutton])]
         ),
         alignment=ft.alignment.center
     )

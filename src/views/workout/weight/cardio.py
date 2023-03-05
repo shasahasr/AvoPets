@@ -72,7 +72,7 @@ def cardio(page: ft.Page):
         xp = 0
         if int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0:
             xp += 50
-        xp += int(e1TextControl.value)
+        xp += int(e1TextControl.value * 2)
         xp += int(e2TextControl.value)
         xp += int(e3TextControl.value)
         xp += int(e4TextControl.value)
@@ -116,7 +116,7 @@ def cardio(page: ft.Page):
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE2Counter),
                                 e2TextControl,
-                                ft.Text(" miles",
+                                ft.Text(" minutes",
                                         color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE2Counter),
@@ -137,7 +137,7 @@ def cardio(page: ft.Page):
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE3Counter),
                                 e3TextControl,
-                                ft.Text(" reps",
+                                ft.Text(" minutes",
                                         color=ft.colors.WHITE),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE3Counter),

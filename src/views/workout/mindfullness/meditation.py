@@ -72,13 +72,7 @@ def meditation(page: ft.Page):
         page.update()
 
     def finishWorkout(e):
-        xp = 0
-        if int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0:
-            xp += 50
-        xp += int(e1TextControl.value)
-        xp += int(e2TextControl.value)
-        xp += int(e3TextControl.value)
-        xp += int(e4TextControl.value)
+        xp = int(e1TextControl.value) * 5
         add_xp(page.client_storage.get("user_id"), xp)
         add_health(page.client_storage.get("user_id"), int(e1TextControl.value) +
                    int(e2TextControl.value) + int(e3TextControl.value) + int(e4TextControl.value))
@@ -92,7 +86,8 @@ def meditation(page: ft.Page):
             #lower instructions taken from https://www.mindful.org/how-to-meditate/
             ft.Text(
                 "Insturctions for Meditating. Warning: This takes time to master, but if you continue you can do it :)"),
-            ft.Text("""1) Take a seat
+            ft.Text("""
+            1) Take a seat
                     Find place to sit that feels calm and quiet to you.
 
                     2) Set a time limit

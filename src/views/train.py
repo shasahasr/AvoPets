@@ -44,8 +44,6 @@ def train(page: ft.Page):
                                                   on_click=lambda _: page.go('/meditation')),
                                 ft.ElevatedButton(
                                     text="Yoga", on_click=lambda _: page.go('/yoga')),
-                                ft.ElevatedButton(
-                                    text="Sleep", on_click=lambda _: page.go('/sleep')),
                             ]
                         ),
                     ]

@@ -101,14 +101,14 @@ def leg(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Squats",
-                                color=ft.colors.WHITE),
+                                color=ft.colors.WHITE, size=50),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE1Counter),
                                 e1TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.WHITE),
+                                        color=ft.colors.WHITE, size=30),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE1Counter),
                             ]
@@ -123,14 +123,14 @@ def leg(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Lunges",
-                                color=ft.colors.WHITE),
+                                color=ft.colors.WHITE, size=50),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE2Counter),
                                 e2TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.WHITE),
+                                        color=ft.colors.WHITE, size=30),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE2Counter),
                             ]
@@ -145,14 +145,14 @@ def leg(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Calf Raises",
-                                color=ft.colors.WHITE),
+                                color=ft.colors.WHITE, size=50),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE3Counter),
                                 e3TextControl,
                                 ft.Text(" reps",
-                                        color=ft.colors.WHITE),
+                                        color=ft.colors.WHITE, size=30),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE3Counter),
                             ]
@@ -167,14 +167,14 @@ def leg(page: ft.Page):
                 content=ft.Column(
                     controls=[
                         ft.Text("Stairs",
-                                color=ft.colors.WHITE),
+                                color=ft.colors.WHITE, size=50),
                         ft.Row(
                             controls=[
                                 ft.ElevatedButton(
                                     "-", on_click=decreaseE4Counter),
                                 e4TextControl,
                                 ft.Text(" flights",
-                                        color=ft.colors.WHITE),
+                                        color=ft.colors.WHITE, size=30),
                                 ft.ElevatedButton(
                                     "+", on_click=increaseE4Counter),
                             ]

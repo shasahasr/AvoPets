@@ -69,7 +69,6 @@ def change_name(user_id, name):
 def add_friend(user_id, add_nickname):
     user = get_user_by_id(user_id).to_dict()
     friend = get_user_by_email(add_nickname)
-    print(friend)
     if friend:
         user["friends"].append(friend)
         users_ref.document(user_id).set(user)
