@@ -7,6 +7,7 @@ from views.workout.weight.push import push
 from views.workout.weight.pull import pull
 from views.workout.weight.cardio import cardio
 from views.workout.weight.leg import leg
+from views.battle import battle
 from views.profile import profile
 
 
