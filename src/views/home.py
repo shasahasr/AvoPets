@@ -72,56 +72,60 @@ def home(page: ft.Page):
                     ),
                 ]),
                 ft.Row([
-                    ft.Container(
-                        content=ft.Row(
-                            [
-                                ft.Icon(
-                                    ft.icons.ACCOUNT_CIRCLE_ROUNDED),
-                                ft.Text("Profile"),
-                            ]
+                        ft.Container(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(
+                                        ft.icons.ACCOUNT_CIRCLE_ROUNDED),
+                                    ft.Text("Profile"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/profile'),
+                            height=page.height/8,
+                            width=page.width/4,
+                            alignment=ft.alignment.top_center,
+                            padding=60
                         ),
-                        on_click=lambda _: page.go('/profile'),
-                        height=page.height/8,
-                        width=page.width/4,
-                        alignment=ft.alignment.top_center
-                    ),
-                    ft.Container(
-                        content=ft.Row(
-                            [
-                                ft.Icon(ft.icons.ARROW_UPWARD_ROUNDED),
-                                ft.Text("Train"),
-                            ]
+                        ft.Container(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(ft.icons.ARROW_UPWARD_ROUNDED),
+                                    ft.Text("Train"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/train'),
+                            height=page.height/8,
+                            width=page.width/4,
+                            alignment=ft.alignment.top_center,
+                            padding=60
                         ),
-                        on_click=lambda _: page.go('/train'),
-                        height=page.height/8,
-                        width=page.width/4,
-                        alignment=ft.alignment.top_center
-                    ),
-                    ft.Container(
-                        content=ft.Row(
-                            [
-                                ft.Icon(ft.icons.FLAG_ROUNDED),
-                                ft.Text("Battle"),
-                            ]
+                        ft.Container(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(ft.icons.FLAG_ROUNDED),
+                                    ft.Text("Battle"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/battle'),
+                            height=page.height/8,
+                            width=page.width/4,
+                            alignment=ft.alignment.top_center,
+                            padding=60,
                         ),
-                        on_click=lambda _: page.go('/battle'),
-                        height=page.height/8,
-                        width=page.width/4,
-                        alignment=ft.alignment.top_center
-                    ),
-                    ft.Container(
-                        content=ft.Row(
-                            [
-                                ft.Icon(ft.icons.EXIT_TO_APP_ROUNDED),
-                                ft.Text("Logout"),
-                            ]
+                        ft.Container(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(ft.icons.EXIT_TO_APP_ROUNDED),
+                                    ft.Text("Logout"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/logout'),
+                            height=page.height/8,
+                            width=page.width/4,
+                            alignment=ft.alignment.top_center,
+                            padding=60
                         ),
-                        on_click=lambda _: page.go('/logout'),
-                        height=page.height/8,
-                        width=page.width/4,
-                        alignment=ft.alignment.top_center
-                    ),
-                ],
+                    ],
                 ),
             ],
         )
