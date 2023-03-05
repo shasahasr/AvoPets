@@ -85,8 +85,14 @@ def home(page: ft.Page):
                             str(user.get("pet")["currentlevel"])),
                     alignment=ft.alignment.center,
                 ),
-                ft.Text("XP Progress", style="headlineSmall"),
-                ft.Column([pb]),
+                ft.Container(
+                    ft.Text("XP Progress", style="headlineSmall"),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Column([pb]),
+                    alignment=ft.alignment.center,
+                ),
             ]
         )
     else:
