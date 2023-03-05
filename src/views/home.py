@@ -52,7 +52,7 @@ def home(page: ft.Page):
                 ),
                 ft.Container(
                     content=ft.Image(
-                        src=f"./assets/idle0.png",
+                        src=f"./assets/idle0.gif",
                         width=450,
                         height=450,
                         fit=ft.ImageFit.CONTAIN,
@@ -130,7 +130,7 @@ def home(page: ft.Page):
                 ),
                 ft.Container(
                     content=ft.Image(
-                        src=f"./assets/idle0.png",
+                        src=f"./assets/idle0.gif",
                         width=600,
                         height=600,
                         fit=ft.ImageFit.CONTAIN,
