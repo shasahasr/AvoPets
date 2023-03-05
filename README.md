@@ -12,7 +12,7 @@ The app is made to help people to have more fun in a well lifestype, where the p
 
 This app is not fully built, and many features can be added. For example, we wanted to connect to either FitBit or Apple Watch APIs to make the tracking for everything much easier. Additionally, we could add multiplayer gamemodes as previously planned to further incentivise the importance of working out.
 
-We used (Firebase)[https://console.firebase.google.com/u/0/project/avopets-abb9b] and Firestore for login credentials + extra variables that change based on account. It is written in flet which is a combination of Flutter and Python.
+We used (Firebase)[https://console.firebase.google.com/u/0/project/avopets-abb9b] and Firestore for login credentials + extra variables that change based on account. It is written in flet which is a combination of Flutter and Python. (additional, in the src folder there is a firebase.py file)
 
 ## How to run the program:
 MAKE SURE TO DO ALL STEPS IN VSCODE TERMINAL!!
