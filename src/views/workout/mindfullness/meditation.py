@@ -3,9 +3,9 @@ import flet as ft
 
 def meditation(page: ft.Page):
     return ft.View(
-        '/breathing',
+        '/meditation',
         [
-            ft.AppBar(title=ft.Text('Breathing'),
+            ft.AppBar(title=ft.Text('Meditation'),
                       bgcolor=ft.colors.SURFACE_VARIANT),
         ]
     )
