@@ -187,10 +187,6 @@ def leg(page: ft.Page):
             ),
             ft.Container(
                 content = ft.ElevatedButton("Finish Workout", on_click = finishWorkout)
-<<<<<<< HEAD
             )
-=======
-            ),
->>>>>>> 6c9b893 (added finish workout stuff to weights gonna add to it to mindfulness now)
         ]
     )
