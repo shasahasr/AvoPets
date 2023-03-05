@@ -18,7 +18,7 @@ def train(page: ft.Page):
                     ft.ElevatedButton(
                         text="Pull", on_click=lambda _: page.go('/pull')),
                     ft.ElevatedButton(
-                        text="Leg", on_click=lambda _: page.go('/login')),
+                        text="Leg", on_click=lambda _: page.go('/leg')),
                     ft.ElevatedButton(
                         text="Cardio", on_click=lambda _: page.go('/cardio')),
                 ]

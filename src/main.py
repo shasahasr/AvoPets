@@ -6,6 +6,7 @@ from views.train import train
 from views.workout.weight.push import push
 from views.workout.weight.pull import pull
 from views.workout.weight.cardio import cardio
+from views.workout.weight.leg import leg
 from views.profile import profile
 
 
@@ -28,6 +29,8 @@ def main(page: ft.Page):
             page.views.append(pull(page))
         if page.route == "/cardio":
             page.views.append(cardio(page))
+        if page.route == "/leg":
+            page.views.append(leg(page))
         if page.route == "/logout":
             page.client_storage.clear()
             page.go('/')
