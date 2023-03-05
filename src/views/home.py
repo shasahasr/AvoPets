@@ -21,27 +21,25 @@ def home(page: ft.Page):
             [
                 ft.Container(
                     ft.Text(user.get("pet")[
-                        "name"] + "'s Stats", size=20),
+                        "name"] + "'s Stats", size=40),
                     alignment=ft.alignment.top_center,
                 ),
                 ft.Container(
-                    ft.Text("Health: " +
-                            str(user.get("pet")["health"])),
-                    alignment=ft.alignment.center,
+                    ft.Text("Health: " + str(user.get("pet")["health"]), size=30), alignment=ft.alignment.center,
                 ),
                 ft.Container(
                     ft.Text("Strength: " +
-                            str(user.get("pet")["strength"])),
+                            str(user.get("pet")["strength"]), size=30),
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
                     ft.Text("Endurance: " +
-                            str(user.get("pet")["endurance"])),
+                            str(user.get("pet")["endurance"]), size=30),
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
                     ft.Text("XP Level " +
-                            str(user.get("pet")["currentlevel"])),
+                            str(user.get("pet")["currentlevel"]), size=30),
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
@@ -55,8 +53,8 @@ def home(page: ft.Page):
                 ft.Container(
                     content=ft.Image(
                         src=f"./assets/idle0.png",
-                        width=550,
-                        height=550,
+                        width=500,
+                        height=500,
                         fit=ft.ImageFit.CONTAIN,
                     ),
                     alignment=ft.alignment.center
