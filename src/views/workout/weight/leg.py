@@ -67,6 +67,18 @@ def leg(page: ft.Page):
         e4TextControl.value = str(int(e4TextControl.value) + 1)
 
         page.update()
+        
+    def finishWorkout(e):
+        xp = 0
+        if int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0:
+            xp += 50
+        xp += int(e1TextControl.value)
+        xp += int(e2TextControl.value)
+        xp += int(e3TextControl.value)
+        xp += int(e4TextControl.value)
+        add_xp(page.client_storage.get("user_id"), xp)
+        add_strength(page.client_storage.get("user_id"), int(e1TextControl.value) + int(e2TextControl.value) + int(e3TextControl.value) + int(e4TextControl.value))
+        page.go("/")
 
     def finishWorkout(e):
         xp = 0
@@ -175,6 +187,10 @@ def leg(page: ft.Page):
             ),
             ft.Container(
                 content = ft.ElevatedButton("Finish Workout", on_click = finishWorkout)
+<<<<<<< HEAD
             )
+=======
+            ),
+>>>>>>> 6c9b893 (added finish workout stuff to weights gonna add to it to mindfulness now)
         ]
     )

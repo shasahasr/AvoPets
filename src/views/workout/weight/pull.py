@@ -79,7 +79,11 @@ def pull(page: ft.Page):
         add_xp(page.client_storage.get("user_id"), xp)
         add_strength(page.client_storage.get("user_id"), int(e1TextControl.value) + int(e2TextControl.value) + int(e3TextControl.value) + int(e4TextControl.value))
         page.go("/")
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 6c9b893 (added finish workout stuff to weights gonna add to it to mindfulness now)
     return ft.View(
         '/pull',
         [
