@@ -93,6 +93,15 @@ def home(page: ft.Page):
                     ft.Column([pb]),
                     alignment=ft.alignment.center,
                 ),
+                ft.Container(
+                    content=ft.Image(
+                        src=f"./assets/idle0.png",
+                        width=600,
+                        height=600,
+                        fit=ft.ImageFit.CONTAIN,
+                    ),
+                    alignment=ft.alignment.center
+                )
             ]
         )
     else:
