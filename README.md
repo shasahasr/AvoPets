@@ -14,11 +14,33 @@ We used Firebase and Firestore for login credentials + extra variables that chan
 Code Written by Aditya Tiwari, Chandu Pedadda, and Shaunak Sahasrabudhe.
 Art done by Isamu Mojica.
 
+How to run the program:
 
+first, verify if you have Python installed, run
+```
+python -V
+```
 
+next, you have to activate the environment on python. navigate to ./avopets/Scripts, and run the activating command
+```
+# MacOS
+source activate
 
+# Windows
+activate
+```
 
+install the following packages
+```
+python -m pip install flet, firebase-admin, firebase
+```
 
+now, navigate back to the ./src file, and run the main file
+```
+python main.py
+```
+
+bam boom bop
 
 
 
