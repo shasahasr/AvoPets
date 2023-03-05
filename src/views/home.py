@@ -27,7 +27,7 @@ def home(page: ft.Page):
                                 ft.Text(user.get("pet")[
                                     "name"] + "'s Stats", size=40),
                                 alignment=ft.alignment.top_center,
-                                padding= ft.padding.only(top=(page.height/8)*2)
+                                padding=ft.padding.only(top=(page.height/8)*2)
                             ),
                             ft.Container(
                                 ft.Text("Health: " + str(floor(user.get("pet")["health"])), size=30), alignment=ft.alignment.center,
@@ -54,7 +54,8 @@ def home(page: ft.Page):
                             ft.Container(
                                 ft.Column([pb]),
                                 alignment=ft.alignment.center,
-                                padding= ft.padding.only(bottom=(page.height/8)*2)
+                                padding=ft.padding.only(
+                                    bottom=(page.height/8)*2)
                             ),
                         ]),
                         width=page.width/2,
@@ -71,56 +72,56 @@ def home(page: ft.Page):
                     ),
                 ]),
                 ft.Row([
-                        ft.Container(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(
-                                        ft.icons.ACCOUNT_CIRCLE_ROUNDED),
-                                    ft.Text("Profile"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/profile'),
-                            height=page.height/8,
-                            width=page.width/4,
-                            alignment=ft.alignment.top_center
+                    ft.Container(
+                        content=ft.Row(
+                            [
+                                ft.Icon(
+                                    ft.icons.ACCOUNT_CIRCLE_ROUNDED),
+                                ft.Text("Profile"),
+                            ]
                         ),
-                        ft.Container(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(ft.icons.ARROW_UPWARD_ROUNDED),
-                                    ft.Text("Train"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/train'),
-                            height=page.height/8,
-                            width=page.width/4,
-                            alignment=ft.alignment.top_center
+                        on_click=lambda _: page.go('/profile'),
+                        height=page.height/8,
+                        width=page.width/4,
+                        alignment=ft.alignment.top_center
+                    ),
+                    ft.Container(
+                        content=ft.Row(
+                            [
+                                ft.Icon(ft.icons.ARROW_UPWARD_ROUNDED),
+                                ft.Text("Train"),
+                            ]
                         ),
-                        ft.Container(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(ft.icons.FLAG_ROUNDED),
-                                    ft.Text("Battle"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/battle'),
-                            height=page.height/8,
-                            width=page.width/4,
-                            alignment=ft.alignment.top_center
+                        on_click=lambda _: page.go('/train'),
+                        height=page.height/8,
+                        width=page.width/4,
+                        alignment=ft.alignment.top_center
+                    ),
+                    ft.Container(
+                        content=ft.Row(
+                            [
+                                ft.Icon(ft.icons.FLAG_ROUNDED),
+                                ft.Text("Battle"),
+                            ]
                         ),
-                        ft.Container(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(ft.icons.EXIT_TO_APP_ROUNDED),
-                                    ft.Text("Logout"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/logout'),
-                            height=page.height/8,
-                            width=page.width/4,
-                            alignment=ft.alignment.top_center
+                        on_click=lambda _: page.go('/battle'),
+                        height=page.height/8,
+                        width=page.width/4,
+                        alignment=ft.alignment.top_center
+                    ),
+                    ft.Container(
+                        content=ft.Row(
+                            [
+                                ft.Icon(ft.icons.EXIT_TO_APP_ROUNDED),
+                                ft.Text("Logout"),
+                            ]
                         ),
-                    ],
+                        on_click=lambda _: page.go('/logout'),
+                        height=page.height/8,
+                        width=page.width/4,
+                        alignment=ft.alignment.top_center
+                    ),
+                ],
                 ),
             ],
         )
@@ -129,7 +130,7 @@ def home(page: ft.Page):
             "/",
             [
                 ft.Container(
-                    content= ft.Row([
+                    content=ft.Row([
                         ft.Column([
                             ft.Container(
                                 ft.Text("AvoPets", size=60, color="#5dc447"),
@@ -152,9 +153,9 @@ def home(page: ft.Page):
                         ]),
                         ft.Container(
                             content=ft.Image(
-                                src=f"./assets/idle0.gif",
-                                width=600,
-                                height=600,
+                                src=f"./assets/title_screen.gif",
+                                width=1200,
+                                height=1200,
                                 fit=ft.ImageFit.CONTAIN,
                             ),
                             alignment=ft.alignment.center_right
