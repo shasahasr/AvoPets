@@ -71,5 +71,6 @@ def add_friend(user_id, add_nickname):
     friend = get_user_by_email(add_nickname)
     if friend:
         user["friends"].append(friend)
+        users_ref.document(user_id).set(user)
         return True
     return False
