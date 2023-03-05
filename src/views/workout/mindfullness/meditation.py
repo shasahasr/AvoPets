@@ -89,6 +89,7 @@ def meditation(page: ft.Page):
         [
             ft.AppBar(title=ft.Text('Meditation'),
                       bgcolor=ft.colors.SURFACE_VARIANT),
+            #lower instructions taken from https://www.mindful.org/how-to-meditate/
             ft.Text(
                 "Insturctions for Meditating. Warning: This takes time to master, but if you continue you can do it :)"),
             ft.Text("""1) Take a seat
