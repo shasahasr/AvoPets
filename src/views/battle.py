@@ -34,7 +34,7 @@ def battle(page: ft.Page):
     global b_health
 
     user = get_user_by_id(page.client_storage.get("user_id"))
-    boss_health = user.get("pet")["currentlevel"] * 150
+    boss_health = 150 + user.get("pet")["currentlevel"] * 40
     boss_strength = user.get("pet")["currentlevel"] * 125
     user_health = user.get("pet")["health"]
     user_endurance = user.get("pet")["endurance"]
@@ -57,7 +57,7 @@ def battle(page: ft.Page):
 
         if boss_health < 0:
             add_xp(page.client_storage.get("user_id"),
-                   user.get("pet")["currentlevel"] * 150)
+                   user.get("pet")["currentlevel"] * 30)
             page.go("/")
 
         move = randint(1, 5)

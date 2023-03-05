@@ -51,7 +51,8 @@ def breathing(page: ft.Page):
         c.content = c2
         c2.border_radius = ft.border_radius.all(400)
         c.update()"""
-        add_xp(page.client_storage.get("user_id"), 1)
+        add_xp(page.client_storage.get("user_id"), 5)
+        add_health(page.client_storage.get("user_id"), 5)
 
     button = ft.ElevatedButton("Start", on_click=animate)
     c3 = ft.Container(
