@@ -1,5 +1,10 @@
 import flet as ft
-
+import sys
+import os
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current))))
+sys.path.append(parent)
+from firebase import *
 
 def profile(page: ft.Page):
     return ft.View(
@@ -12,23 +17,17 @@ def profile(page: ft.Page):
                     ft.icons.ACCOUNT_CIRCLE_ROUNDED, size=180), radius=100),
                 alignment=ft.alignment.center,
             ),
-            ft.Column(
-                controls=[ft.Container(
-                    ft.Text("Your Lifetime Stats", size=30),
-                    alignment=ft.alignment.center,
+            ft.Container(
+                ft.Text(get_user_by_id(page.client_storage.get("user_id")).get("email") + "'s Account"),
+                alignment=ft.alignment.center,
+                padding=50,
+            ),
+            ft.Container(
+                ft.TextField(
+                    label="Pet Name",
                 ),
-                    ft.Container(
-                    ft.Text("Mindfulness: ", size=20),
-                    alignment=ft.alignment.center,
-                ),
-                    ft.Container(
-                    ft.Text("Running: ", size=20),
-                    alignment=ft.alignment.center,
-                ),
-                    ft.Container(
-                    ft.Text("Weights: ", size=20),
-                    alignment=ft.alignment.center,
-                ),]
-            )
+                alignment=ft.alignment.center,
+                padding=50,
+            ),
         ]
     )

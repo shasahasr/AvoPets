@@ -25,16 +25,16 @@ def home(page: ft.Page):
                     alignment=ft.alignment.top_center,
                 ),
                 ft.Container(
-                    ft.Text("Health: " + str(user.get("pet")["health"]), size=30), alignment=ft.alignment.center,
+                    ft.Text("Health: " + str(floor(user.get("pet")["health"])), size=30), alignment=ft.alignment.center,
                 ),
                 ft.Container(
                     ft.Text("Strength: " +
-                            str(user.get("pet")["strength"]), size=30),
+                            str(floor(user.get("pet")["strength"])), size=30),
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
                     ft.Text("Endurance: " +
-                            str(user.get("pet")["endurance"]), size=30),
+                            str(floor(user.get("pet")["endurance"])), size=30),
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
