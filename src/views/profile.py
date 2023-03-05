@@ -6,7 +6,20 @@ parent = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current
 sys.path.append(parent)
 from firebase import *
 
+pet_name = ""
+
 def profile(page: ft.Page):
+    def change_pet_name(e):
+        global pet_name
+        
+        pet_name = e.control.value
+    
+    def change_p_name(e):
+        global pet_name
+        
+        change_name(page.client_storage.get("user_id"), pet_name)
+        page.update()
+    
     return ft.View(
         '/profile',
         [
@@ -25,9 +38,11 @@ def profile(page: ft.Page):
             ft.Container(
                 ft.TextField(
                     label="Pet Name",
+                    on_change = change_pet_name,
                 ),
                 alignment=ft.alignment.center,
                 padding=50,
             ),
+            ft.ElevatedButton("Change Pet Name", on_click=change_p_name),
         ]
     )
