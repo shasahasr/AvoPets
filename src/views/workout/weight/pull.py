@@ -1,5 +1,10 @@
 import flet as ft
-
+import sys
+import os
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current))))
+sys.path.append(parent)
+from firebase import *
 
 def pull(page: ft.Page):
 
@@ -62,6 +67,18 @@ def pull(page: ft.Page):
         e4TextControl.value = str(int(e4TextControl.value) + 1)
 
         page.update()
+
+    def finishWorkout(e):
+        xp = 0
+        if int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0 and int(e1TextControl.value) > 0:
+            xp += 50
+        xp += int(e1TextControl.value)
+        xp += int(e2TextControl.value)
+        xp += int(e3TextControl.value)
+        xp += int(e4TextControl.value)
+        add_xp(page.client_storage.get("user_id"), xp)
+        add_strength(page.client_storage.get("user_id"), int(e1TextControl.value) + int(e2TextControl.value) + int(e3TextControl.value) + int(e4TextControl.value))
+        page.go("/")
 
     return ft.View(
         '/pull',
@@ -155,6 +172,9 @@ def pull(page: ft.Page):
                 bgcolor=ft.colors.CYAN,
                 padding=5,
                 alignment=ft.alignment.center,
+            ),
+            ft.Container(
+                content = ft.ElevatedButton("Finish Workout", on_click = finishWorkout)
             ),
         ]
     )
