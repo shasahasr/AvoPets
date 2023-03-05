@@ -19,7 +19,47 @@ def home(page: ft.Page):
         return ft.View(
             "/",
             [
-            ft.Container(
+                ft.Container(
+                    ft.Text(user.get("pet")[
+                        "name"] + "'s Stats", size=40),
+                    alignment=ft.alignment.top_center,
+                ),
+                ft.Container(
+                    ft.Text("Health: " + str(floor(user.get("pet")["health"])), size=30), alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("Strength: " +
+                            str(floor(user.get("pet")["strength"])), size=30),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("Endurance: " +
+                            str(floor(user.get("pet")["endurance"])), size=30),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("XP Level " +
+                            str(user.get("pet")["currentlevel"]), size=30),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("XP Progress", style="headlineSmall"),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Column([pb]),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    content=ft.Image(
+                        src=f"./assets/idle0.gif",
+                        width=450,
+                        height=450,
+                        fit=ft.ImageFit.CONTAIN,
+                    ),
+                    alignment=ft.alignment.center
+                ),
+                ft.Container(
                     ft.PopupMenuButton(
                         items=[
                             ft.PopupMenuItem(
