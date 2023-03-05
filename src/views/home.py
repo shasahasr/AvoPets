@@ -45,7 +45,7 @@ def home(page: ft.Page):
                     ), alignment=ft.alignment.bottom_left),
                     ft.Container(content=ft.ElevatedButton(
                         'Battle',
-                        on_click=lambda _: page.go('/start_battle'),
+                        on_click=lambda _: page.go('/battle'),
                     ), alignment=ft.alignment.bottom_center),
                     ft.Container(content=ft.ElevatedButton(
                         'Profile',
