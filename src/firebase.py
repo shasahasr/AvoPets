@@ -10,7 +10,7 @@ def get_user_by_id(id):
 def get_user_by_email(email):
     for user in users_ref.get():
         if email == user.get("email"):
-            return user
+            return user.id
     return False
 
 def check_login(email, password):
@@ -69,6 +69,7 @@ def change_name(user_id, name):
 def add_friend(user_id, add_nickname):
     user = get_user_by_id(user_id).to_dict()
     friend = get_user_by_email(add_nickname)
+    print(friend)
     if friend:
         user["friends"].append(friend)
         users_ref.document(user_id).set(user)

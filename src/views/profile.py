@@ -40,12 +40,16 @@ def profile(page: ft.Page):
         user_friends = get_user_by_id(page.client_storage.get("user_id")).get("friends")
         for friend in user_friends:
             items.append(
-                ft.Row([
-                    ft.Icon(ft.icons.ACCOUNT_CIRCLE_ROUNDED),
-                    ft.Text(get_user_by_id(friend).get("email"), padding=ft.padding.only(top=10, bottom=10, right=50)),
-                    ft.Text(get_user_by_id(friend).get("pet")["currentlevel"], padding=ft.padding.only(top=10, bottom=10))
-                ], padding=ft.padding.only(bottom=10))
-            )
+                    ft.Container(
+                        ft.Row([
+                            ft.Icon(ft.icons.ACCOUNT_CIRCLE_ROUNDED),
+                            ft.Container(ft.Text(get_user_by_id(friend).get("email")), padding=ft.padding.only(right=50) ),
+                            ft.Text(get_user_by_id(friend).get("pet")["currentlevel"])
+                        ]),
+                        padding=ft.padding.only(bottom=10),
+                        alignment=ft.alignment.center,
+                    ),
+                )
             
         return items
 
