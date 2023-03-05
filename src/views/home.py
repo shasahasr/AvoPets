@@ -15,12 +15,50 @@ def home(page: ft.Page):
         return ft.View(
             "/",
             [
-                ft.ElevatedButton(
-                    'Logout', on_click=lambda _: page.go('/logout')),
+                ft.PopupMenuButton(
+                    items=[
+                        ft.PopupMenuItem(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(ft.icons.ACCOUNT_CIRCLE_ROUNDED),
+                                    ft.Text("Profile"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/profile'),
+                        ),
+                        ft.PopupMenuItem(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(ft.icons.ARROW_UPWARD_ROUNDED),
+                                    ft.Text("Train"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/train'),
+                        ),
+                        ft.PopupMenuItem(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(ft.icons.FLAG_ROUNDED),
+                                    ft.Text("Battle"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/battle'),
+                        ),
+                        ft.PopupMenuItem(
+                            content=ft.Row(
+                                [
+                                    ft.Icon(ft.icons.EXIT_TO_APP_ROUNDED),
+                                    ft.Text("Logout"),
+                                ]
+                            ),
+                            on_click=lambda _: page.go('/logout'),
+                        ),
+                    ]
+                ),
                 ft.Container(
                     ft.Text(user.get("pet")[
                         "name"] + "'s Stats", size=20),
-                    alignment=ft.alignment.center,
+                    alignment=ft.alignment.top_center,
                 ),
                 ft.Container(
                     ft.Text("Health: " +
@@ -44,21 +82,9 @@ def home(page: ft.Page):
                 ),
                 ft.Container(
                     ft.Text(
-                        str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"])),
+                        "Next Level: " + str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"])),
                     alignment=ft.alignment.center,
                 ),
-                ft.Container(content=ft.ElevatedButton(
-                    'Train',
-                    on_click=lambda _: page.go('/train'),
-                ), alignment=ft.alignment.bottom_center),
-                ft.Container(content=ft.ElevatedButton(
-                    'Battle',
-                    on_click=lambda _: page.go('/battle'),
-                ), alignment=ft.alignment.bottom_center),
-                ft.Container(content=ft.ElevatedButton(
-                    'Profile',
-                    on_click=lambda _: page.go('/profile'),
-                ), alignment=ft.alignment.bottom_center),
             ]
         )
     else:
@@ -83,14 +109,11 @@ def home(page: ft.Page):
                         'Create an Account', on_click=lambda _: page.go('/create_account')),
                     alignment=ft.alignment.center,
                 ),
-                ft.Container(
-                    ft.Image(
-                        src=f"./assets/idle0.png",
-                        width=600,
-                        height=600,
-                        fit=ft.ImageFit.CONTAIN,
-                    ),
-                    alignment=ft.alignment.center,
+                ft.Image(
+                    src=f"./assets/idle0.png",
+                    width=200,
+                    height=200,
+                    fit=ft.ImageFit.CONTAIN,
                 )
             ]
         )
