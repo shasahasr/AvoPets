@@ -35,9 +35,8 @@ def home(page: ft.Page):
                                     str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"]))
                             ])
                         ]),
-                        ft.Text("Avocado Goes Here", size=50),
                     ],
-                    alignment=ft.alignment.center
+                    alignment=ft.alignment.center,
                 ),
                 ft.Row([
                     ft.Container(content=ft.ElevatedButton(
@@ -46,7 +45,7 @@ def home(page: ft.Page):
                     ), alignment=ft.alignment.bottom_left),
                     ft.Container(content=ft.ElevatedButton(
                         'Battle',
-                        on_click=lambda _: page.go('/battle'),
+                        on_click=lambda _: page.go('/start_battle'),
                     ), alignment=ft.alignment.bottom_center),
                     ft.Container(content=ft.ElevatedButton(
                         'Profile',
