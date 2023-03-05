@@ -27,11 +27,11 @@ def profile(page: ft.Page):
 
         friend_name = e.control.value
 
-    def add_friend(e):
+    def submit_friend(e):
         global friend_name
 
         add_friend(page.client_storage.get("user_id"), friend_name)
-        
+
         page.update()
 
     def items():
@@ -91,7 +91,7 @@ def profile(page: ft.Page):
                     padding=50,
                 ),
                 ft.Container(
-                    ft.ElevatedButton("Try to Add", on_click=add_friend),
+                    ft.ElevatedButton("Try to Add", on_click=submit_friend),
                     alignment=ft.alignment.center,
                 ),
             ]),
