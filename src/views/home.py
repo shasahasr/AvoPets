@@ -17,40 +17,48 @@ def home(page: ft.Page):
             [
                 ft.ElevatedButton(
                     'Logout', on_click=lambda _: page.go('/logout')),
-                ft.Row(
-                    [
-                        ft.Column([
-                            ft.Text(user.get("pet")[
-                                    "name"] + "'s Stats", size=20),
-                            ft.Text("Health: " +
-                                    str(user.get("pet")["health"])),
-                            ft.Text("Strength: " +
-                                    str(user.get("pet")["strength"])),
-                            ft.Text("Endurance: " +
-                                    str(user.get("pet")["endurance"])),
-                            ft.Row([
-                                ft.Text("XP Level " +
-                                        str(user.get("pet")["currentlevel"])),
-                                ft.Text(
-                                    str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"]))
-                            ])
-                        ]),
-                    ],
+                ft.Container(
+                    ft.Text(user.get("pet")[
+                        "name"] + "'s Stats", size=20),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("Health: " +
+                            str(user.get("pet")["health"])),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("Strength: " +
+                            str(user.get("pet")["strength"])),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Text("Endurance: " +
+                            str(user.get("pet")["endurance"])),
+                    alignment=ft.alignment.center,
+                ),
+                ft.Container(
+                    ft.Row([
+                        ft.Text("XP Level " +
+                                str(user.get("pet")["currentlevel"])),
+                        ft.Text(
+                            str(user.get("pet")["currentxp"]) + "/" + str(user.get("pet")["neededxp"]))
+                    ]),
                     alignment=ft.alignment.center,
                 ),
                 ft.Row([
-                    ft.Container(content=ft.ElevatedButton(
+                    ft.Container(ft.ElevatedButton(
                         'Train',
                         on_click=lambda _: page.go('/train'),
-                    ), alignment=ft.alignment.bottom_left),
-                    ft.Container(content=ft.ElevatedButton(
+                    ), alignment=ft.alignment.bottom_center),
+                    ft.Container(ft.ElevatedButton(
                         'Battle',
                         on_click=lambda _: page.go('/battle'),
                     ), alignment=ft.alignment.bottom_center),
-                    ft.Container(content=ft.ElevatedButton(
+                    ft.Container(ft.ElevatedButton(
                         'Profile',
                         on_click=lambda _: page.go('/profile'),
-                    ), alignment=ft.alignment.bottom_right),
+                    ), alignment=ft.alignment.bottom_center),
                 ]),
             ]
         )
@@ -59,7 +67,7 @@ def home(page: ft.Page):
             "/",
             [
                 ft.Container(
-                    ft.Text("AvoPets", size=60),
+                    ft.Text("AvoPets", size=60, color="#5a954a"),
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
