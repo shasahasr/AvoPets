@@ -83,7 +83,7 @@ def pull(page: ft.Page):
     return ft.View(
         '/pull',
         [
-            ft.AppBar(title=ft.Text('pull Workout'),
+            ft.AppBar(title=ft.Text('Pull Workout'),
                       bgcolor=ft.colors.SURFACE_VARIANT),
             ft.Container(
                 content=ft.Column(
@@ -109,7 +109,7 @@ def pull(page: ft.Page):
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        ft.Text("Curl your mom",
+                        ft.Text("Bicep or Hammer Curls",
                                 color=ft.colors.WHITE),
                         ft.Row(
                             controls=[
