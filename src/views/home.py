@@ -19,47 +19,6 @@ def home(page: ft.Page):
         return ft.View(
             "/",
             [
-                ft.PopupMenuButton(
-                    items=[
-                        ft.PopupMenuItem(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(ft.icons.ACCOUNT_CIRCLE_ROUNDED),
-                                    ft.Text("Profile"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/profile'),
-                        ),
-                        ft.PopupMenuItem(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(ft.icons.ARROW_UPWARD_ROUNDED),
-                                    ft.Text("Train"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/train'),
-                        ),
-                        ft.PopupMenuItem(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(ft.icons.FLAG_ROUNDED),
-                                    ft.Text("Battle"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/battle'),
-                        ),
-                        ft.PopupMenuItem(
-                            content=ft.Row(
-                                [
-                                    ft.Icon(ft.icons.EXIT_TO_APP_ROUNDED),
-                                    ft.Text("Logout"),
-                                ]
-                            ),
-                            on_click=lambda _: page.go('/logout'),
-                        ),
-                    ],
-                    icon=ft.icons.MENU_ROUNDED,
-                ),
                 ft.Container(
                     ft.Text(user.get("pet")[
                         "name"] + "'s Stats", size=20),
@@ -94,14 +53,50 @@ def home(page: ft.Page):
                     alignment=ft.alignment.center,
                 ),
                 ft.Container(
-                    content=ft.Image(
-                        src=f"./assets/idle0.png",
-                        width=600,
-                        height=600,
-                        fit=ft.ImageFit.CONTAIN,
+                    ft.PopupMenuButton(
+                        items=[
+                            ft.PopupMenuItem(
+                                content=ft.Row(
+                                    [
+                                        ft.Icon(
+                                            ft.icons.ACCOUNT_CIRCLE_ROUNDED),
+                                        ft.Text("Profile"),
+                                    ]
+                                ),
+                                on_click=lambda _: page.go('/profile'),
+                            ),
+                            ft.PopupMenuItem(
+                                content=ft.Row(
+                                    [
+                                        ft.Icon(ft.icons.ARROW_UPWARD_ROUNDED),
+                                        ft.Text("Train"),
+                                    ]
+                                ),
+                                on_click=lambda _: page.go('/train'),
+                            ),
+                            ft.PopupMenuItem(
+                                content=ft.Row(
+                                    [
+                                        ft.Icon(ft.icons.FLAG_ROUNDED),
+                                        ft.Text("Battle"),
+                                    ]
+                                ),
+                                on_click=lambda _: page.go('/battle'),
+                            ),
+                            ft.PopupMenuItem(
+                                content=ft.Row(
+                                    [
+                                        ft.Icon(ft.icons.EXIT_TO_APP_ROUNDED),
+                                        ft.Text("Logout"),
+                                    ]
+                                ),
+                                on_click=lambda _: page.go('/logout'),
+                            ),
+                        ],
+                        icon=ft.icons.MENU_ROUNDED,
                     ),
-                    alignment=ft.alignment.center
-                )
+                    alignment=ft.alignment.bottom_center
+                ),
             ]
         )
     else:
