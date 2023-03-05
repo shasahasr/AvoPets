@@ -7,6 +7,10 @@ from views.workout.weight.push import push
 from views.workout.weight.pull import pull
 from views.workout.weight.cardio import cardio
 from views.workout.weight.leg import leg
+from views.workout.mindfullness.breathing import breathing
+from views.workout.mindfullness.meditation import meditation
+from views.workout.mindfullness.sleep import sleep
+from views.workout.mindfullness.yoga import yoga
 from views.battle import battle
 from views.profile import profile
 
@@ -31,13 +35,13 @@ def main(page: ft.Page):
         if page.route == "/cardio":
             page.views.append(cardio(page))
         if page.route == "/leg":
-            page.views.append(leg(page))
+            page.views.append(breathing(page))
         if page.route == "/breathing":
-            page.views.append(leg(page))
+            page.views.append(meditation(page))
         if page.route == "/meditation":
-            page.views.append(leg(page))
+            page.views.append(yoga(page))
         if page.route == "/yoga":
-            page.views.append(leg(page))
+            page.views.append(sleep(page))
         if page.route == "/sleep":
             page.views.append(leg(page))
         if page.route == "/logout":
